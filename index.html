@@ -67,34 +67,24 @@ body{
 }
 .card a:hover{transform:translateY(-2px)}
 
-/* SALA GENERAL */
-.general{
-  background:linear-gradient(180deg,#052e16,#14532d);
-  border:2px solid #22c55e
-}
-.general a{
-  background:linear-gradient(135deg,#22c55e,#16a34a);
-  color:#022c22
-}
-
-/* ⭐ FEDERATE ONLINE DESTACADA ⭐ */
+/* 🟢 FEDÉRATE ONLINE (VERDE) */
 .federate{
-  background:linear-gradient(160deg,rgba(14,165,233,.35),rgba(2,6,23,.9));
-  border:2px solid #38bdf8;
+  background:linear-gradient(160deg,rgba(34,197,94,.35),rgba(2,6,23,.9));
+  border:2px solid #22c55e;
   box-shadow:
-    0 0 0 1px rgba(56,189,248,.4),
-    0 0 35px rgba(56,189,248,.45);
-  animation:glow 2.8s infinite alternate;
+    0 0 0 1px rgba(34,197,94,.4),
+    0 0 35px rgba(34,197,94,.45);
+  animation:glowGreen 2.8s infinite alternate;
 }
 
-@keyframes glow{
-  from{box-shadow:0 0 18px rgba(56,189,248,.35)}
-  to{box-shadow:0 0 40px rgba(56,189,248,.7)}
+@keyframes glowGreen{
+  from{box-shadow:0 0 18px rgba(34,197,94,.35)}
+  to{box-shadow:0 0 40px rgba(34,197,94,.7)}
 }
 
 .federate a{
-  background:linear-gradient(135deg,#0ea5e9,#0369a1);
-  color:#e0f2fe
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#022c22
 }
 
 /* BADGE */
@@ -103,13 +93,24 @@ body{
   top:-12px;
   left:50%;
   transform:translateX(-50%);
-  background:#0ea5e9;
-  color:#020617;
+  background:#22c55e;
+  color:#022c22;
   font-size:11px;
   padding:6px 14px;
   border-radius:999px;
   font-weight:800;
   letter-spacing:.8px;
+}
+
+/* 🔵 SALA GENERAL (AZUL TELEGRAM) */
+.general{
+  background:linear-gradient(160deg,rgba(0,136,204,.35),rgba(2,6,23,.9));
+  border:2px solid #0088cc;
+  box-shadow:0 0 30px rgba(0,136,204,.35);
+}
+.general a{
+  background:linear-gradient(135deg,#0088cc,#0077b6);
+  color:#e0f2ff
 }
 
 /* OTRAS SALAS */
@@ -137,19 +138,21 @@ body{
   <p>Salas especializadas de ornitología en Telegram</p>
 </header>
 
+<!-- 🟢 FEDÉRATE ONLINE -->
+<section class="card federate">
+  <span class="badge">PRIORITARIO</span>
+  <div class="icon"><img src="federate.jpg"></div>
+  <h2>FEDÉRATE ONLINE</h2>
+  <p>Federaciones, licencias, normativa y ayuda para federarte.</p>
+  <a href="https://t.me/ENLACE_FEDERATE">Unirme a esta sala</a>
+</section>
+
+<!-- 🔵 SALA GENERAL -->
 <section class="card general">
   <div class="icon"><img src="general.jpg"></div>
   <h2>SALA GENERAL</h2>
   <p>Charla abierta, consultas y convivencia entre aficionados.</p>
   <a href="https://t.me/ENLACE_GENERAL">Unirme al grupo general</a>
-</section>
-
-<section class="card federate">
-  <span class="badge">DESTACADO</span>
-  <div class="icon"><img src="federate.jpg"></div>
-  <h2>FEDÉRATE ONLINE</h2>
-  <p>Federaciones, licencias, normativa y ayuda para federarte.</p>
-  <a href="https://t.me/ENLACE_FEDERATE">Unirme a esta sala</a>
 </section>
 
 <section class="card psitacidas">
