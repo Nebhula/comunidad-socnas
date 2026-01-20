@@ -165,7 +165,7 @@ body{
   <span>Instala la App Ornitológica</span>
   <button id="installBtn" style="
     background:#000;
-    color:#FFD700; /* contraste con el fondo */
+    color:#FFD700;
     border:none;
     padding:6px 12px;
     border-radius:6px;
@@ -266,48 +266,57 @@ const banner = document.getElementById('installBanner');
 const installBtn = document.getElementById('installBtn');
 const closeBtn = document.getElementById('closeBanner');
 
-// Comprobar si el usuario ya instaló la PWA o cerró el tip
+// Detecta iOS
+const isIos = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
+const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
+
+// Si ya se instaló o cerró antes, no mostrar
 if (!localStorage.getItem('pwaInstalled')) {
 
-  // Evento antes de instalar
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    banner.style.display = 'flex';
-  });
+  // Navegadores que soportan PWA (Chrome/Edge/Opera)
+  if ('beforeinstallprompt' in window) {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      banner.style.display = 'flex';
+    });
 
-  // Click en el botón instalar
-  installBtn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const choice = await deferredPrompt.userChoice;
-      // Guardar que se instaló
-      if (choice.outcome === 'accepted') {
-        localStorage.setItem('pwaInstalled', 'true');
+    installBtn.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        if (choice.outcome === 'accepted') {
+          localStorage.setItem('pwaInstalled', 'true');
+        }
+        banner.style.display = 'none';
+        deferredPrompt = null;
       }
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       banner.style.display = 'none';
-      deferredPrompt = null;
-    }
-  });
+      localStorage.setItem('pwaInstalled', 'true');
+    });
 
-  // Cerrar manualmente el banner
-  closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    banner.style.display = 'none';
-    localStorage.setItem('pwaInstalled', 'true'); // No mostrar nunca más
-  });
+    window.addEventListener('appinstalled', () => {
+      localStorage.setItem('pwaInstalled', 'true');
+      banner.style.display = 'none';
+    });
+  } 
 
-  // Evento cuando la PWA se instala oficialmente
-  window.addEventListener('appinstalled', () => {
-    localStorage.setItem('pwaInstalled', 'true');
-    banner.style.display = 'none';
-  });
-
+  // iOS o navegadores sin beforeinstallprompt
+  else if (isIos && !isInStandaloneMode) {
+    console.log("Para instalar la app en iOS: pulsa 'Compartir → Añadir a pantalla de inicio'");
+    // Opcional: mostrar un mensaje minimalista en la web
+    // banner.innerHTML = "iOS: Pulsa 'Compartir → Añadir a pantalla de inicio'";
+    // banner.style.display = 'flex';
+  }
 } else {
-  // Si ya se instaló, no mostrar el banner
   banner.style.display = 'none';
 }
 </script>
+
 
 
 
