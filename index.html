@@ -270,15 +270,16 @@ const closeBtn = document.getElementById('closeBanner');
 const isIos = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
 const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
 
-// Si ya se instaló o cerró antes, no mostrar
+// Solo mostrar banner si no se instaló antes
 if (!localStorage.getItem('pwaInstalled')) {
 
-  // Navegadores que soportan PWA (Chrome/Edge/Opera)
+  // Navegadores compatibles con PWA
   if ('beforeinstallprompt' in window) {
+
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
+      e.preventDefault(); // Previene que Chrome muestre su prompt automático
       deferredPrompt = e;
-      banner.style.display = 'flex';
+      banner.style.display = 'flex'; // Mostrar el banner
     });
 
     installBtn.addEventListener('click', async () => {
@@ -303,19 +304,17 @@ if (!localStorage.getItem('pwaInstalled')) {
       localStorage.setItem('pwaInstalled', 'true');
       banner.style.display = 'none';
     });
-  } 
 
-  // iOS o navegadores sin beforeinstallprompt
-  else if (isIos && !isInStandaloneMode) {
-    console.log("Para instalar la app en iOS: pulsa 'Compartir → Añadir a pantalla de inicio'");
-    // Opcional: mostrar un mensaje minimalista en la web
-    // banner.innerHTML = "iOS: Pulsa 'Compartir → Añadir a pantalla de inicio'";
-    // banner.style.display = 'flex';
+  } else if (isIos && !isInStandaloneMode) {
+    // iOS no tiene beforeinstallprompt → solo aviso opcional
+    console.log("iOS: Pulsa 'Compartir → Añadir a pantalla de inicio' para instalar la app");
   }
+
 } else {
   banner.style.display = 'none';
 }
 </script>
+
 
 
 
