@@ -149,7 +149,7 @@ body{
   bottom:20px;
   left:50%;
   transform:translateX(-50%);
-  background:#FFD700; /* amarillo, cambia a azul #1e3a8a si quieres */
+  background:#FFD700; /* amarillo: cambia a #1e3a8a para azul */
   color:#000;
   padding:10px 14px;
   border-radius:8px;
@@ -179,6 +179,8 @@ body{
     cursor:pointer;
   ">✖</span>
 </div>
+
+
 
 
 
@@ -261,59 +263,66 @@ Respeto obligatorio; problemas por privado.</p>
 
 
 <script>
-let deferredPrompt;
-const banner = document.getElementById('installBanner');
-const installBtn = document.getElementById('installBtn');
-const closeBtn = document.getElementById('closeBanner');
+document.addEventListener('DOMContentLoaded', () => {
+  let deferredPrompt;
+  const banner = document.getElementById('installBanner');
+  const installBtn = document.getElementById('installBtn');
+  const closeBtn = document.getElementById('closeBanner');
 
-// Detecta iOS
-const isIos = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
-const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
+  // Detectar iOS
+  const isIos = /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+  const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
 
-// Solo mostrar banner si no se instaló antes
-if (!localStorage.getItem('pwaInstalled')) {
+  // Si ya instaló o cerró, no mostrar
+  if (!localStorage.getItem('pwaInstalled')) {
 
-  // Navegadores compatibles con PWA
-  if ('beforeinstallprompt' in window) {
+    // Navegadores compatibles con PWA
+    if ('beforeinstallprompt' in window) {
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault(); // Previene que Chrome muestre su prompt automático
-      deferredPrompt = e;
-      banner.style.display = 'flex'; // Mostrar el banner
-    });
+      // Guardar evento para poder disparar prompt más tarde
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        banner.style.display = 'flex'; // Mostrar tip
+      });
 
-    installBtn.addEventListener('click', async () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const choice = await deferredPrompt.userChoice;
-        if (choice.outcome === 'accepted') {
-          localStorage.setItem('pwaInstalled', 'true');
+      // Click en "Instalar"
+      installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const choice = await deferredPrompt.userChoice;
+          if (choice.outcome === 'accepted') {
+            localStorage.setItem('pwaInstalled', 'true');
+          }
+          banner.style.display = 'none';
+          deferredPrompt = null;
         }
+      });
+
+      // Click en cerrar ✖
+      closeBtn.addEventListener('click', () => {
         banner.style.display = 'none';
-        deferredPrompt = null;
-      }
-    });
+        localStorage.setItem('pwaInstalled', 'true');
+      });
 
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      banner.style.display = 'none';
-      localStorage.setItem('pwaInstalled', 'true');
-    });
+      // Evento oficial de instalación
+      window.addEventListener('appinstalled', () => {
+        localStorage.setItem('pwaInstalled', 'true');
+        banner.style.display = 'none';
+      });
 
-    window.addEventListener('appinstalled', () => {
-      localStorage.setItem('pwaInstalled', 'true');
-      banner.style.display = 'none';
-    });
+    } 
+    // iOS o navegadores no compatibles
+    else if (isIos && !isInStandaloneMode) {
+      console.log("iOS: Pulsa 'Compartir → Añadir a pantalla de inicio'");
+    }
 
-  } else if (isIos && !isInStandaloneMode) {
-    // iOS no tiene beforeinstallprompt → solo aviso opcional
-    console.log("iOS: Pulsa 'Compartir → Añadir a pantalla de inicio' para instalar la app");
+  } else {
+    banner.style.display = 'none';
   }
-
-} else {
-  banner.style.display = 'none';
-}
+});
 </script>
+
 
 
 
