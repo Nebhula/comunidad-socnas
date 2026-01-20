@@ -142,6 +142,14 @@ body{
 
 <body>
 
+<div id="installBanner" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#22c55e;color:#fff;padding:14px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.3);z-index:999;font-family:system-ui;cursor:pointer;">
+  Instala la app de Comunidad Ornitológica 🦜
+  <span id="closeBanner" style="margin-left:12px;font-weight:bold;cursor:pointer;">✖</span>
+</div>
+
+
+
+  
 <main class="container">
 
 <header class="header">
@@ -215,6 +223,38 @@ Respeto obligatorio; problemas por privado.</p>
   <a href="mailto:contacto@tudominio.com">Contactar</a>
 </section>
 
+
+<script>
+let deferredPrompt;
+const banner = document.getElementById('installBanner');
+const closeBtn = document.getElementById('closeBanner');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  banner.style.display = 'block';
+});
+
+banner.addEventListener('click', async () => {
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+    if(choice.outcome === 'accepted'){
+      console.log('App instalada');
+    }
+    deferredPrompt = null;
+    banner.style.display = 'none';
+  }
+});
+
+closeBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  banner.style.display = 'none';
+});
+</script>
+
+
+  
 <footer class="footer">
   Comunidad Ornitológica · Telegram
 </footer>
