@@ -2,6 +2,7 @@
   "name": "Comunidad Ornitológica SOCNAS",
   "short_name": "Ornitología",
   "start_url": "/comunidad-socnas/index.html",
+  "scope": "/comunidad-socnas/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#22c55e",
