@@ -287,6 +287,12 @@ closeBtn.addEventListener('click', (e) => {
 </script>
 
 
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/comunidad-socnas/sw.js')
+    .then(() => console.log('Service Worker registrado correctamente'));
+}
+</script>
 
   
 <footer class="footer">
