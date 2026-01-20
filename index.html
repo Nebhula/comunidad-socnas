@@ -6,132 +6,123 @@
 <title>Comunidad Ornitológica | Telegram</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  color:#e5e7eb;
 }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #e5e7eb;
-}
-
-.container {
-  max-width: 460px;
-  margin: 0 auto;
-  padding: 28px 16px 50px;
+.container{
+  max-width:460px;
+  margin:0 auto;
+  padding:28px 16px 50px;
 }
 
 /* HEADER */
-.header {
-  text-align: center;
-  margin-bottom: 36px;
+.header{text-align:center;margin-bottom:36px}
+.logo{
+  width:110px;height:110px;border-radius:50%;
+  object-fit:cover;border:3px solid #22c55e;
+  margin-bottom:12px
 }
+.header h1{font-size:26px;margin-bottom:6px}
+.header p{font-size:14px;color:#9ca3af}
 
-.logo {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #22c55e;
-  margin-bottom: 12px;
-}
-
-.header h1 {
-  font-size: 26px;
-  margin-bottom: 6px;
-}
-
-.header p {
-  font-size: 14px;
-  color: #9ca3af;
-}
-
-/* CARD */
-.card {
-  background: linear-gradient(180deg, #020617, #111827);
-  border-radius: 24px;
-  padding: 28px 22px 24px;
-  margin-bottom: 26px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.55);
-  text-align: center;
-}
-
-/* GENERAL */
-.card.general {
-  background: linear-gradient(180deg, #052e16, #14532d);
-  border: 2px solid #22c55e;
+/* CARD BASE */
+.card{
+  background:linear-gradient(180deg,#020617,#111827);
+  border-radius:26px;
+  padding:30px 22px 26px;
+  margin-bottom:28px;
+  box-shadow:0 18px 40px rgba(0,0,0,.55);
+  text-align:center;
+  position:relative;
 }
 
 /* ICON */
-.icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 16px;
-  border: 3px solid rgba(255,255,255,.2);
+.icon{
+  width:100px;height:100px;border-radius:50%;
+  overflow:hidden;margin:0 auto 16px;
+  border:3px solid rgba(255,255,255,.2)
 }
-
-.icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.icon img{width:100%;height:100%;object-fit:cover}
 
 /* TEXT */
-.card h2 {
-  font-size: 21px;
-  margin-bottom: 6px;
-  letter-spacing: 1px;
-}
-
-.card p {
-  font-size: 14px;
-  color: #cbd5f5;
-  margin-bottom: 18px;
-  line-height: 1.4;
+.card h2{font-size:21px;margin-bottom:6px;letter-spacing:1px}
+.card p{
+  font-size:14px;
+  color:#cbd5f5;
+  margin-bottom:20px;
+  line-height:1.4
 }
 
 /* BUTTON */
-.card a {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  border-radius: 18px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease;
+.card a{
+  display:block;width:100%;
+  padding:16px;border-radius:18px;
+  font-weight:700;text-decoration:none;
+  transition:.25s
+}
+.card a:hover{transform:translateY(-2px)}
+
+/* SALA GENERAL */
+.general{
+  background:linear-gradient(180deg,#052e16,#14532d);
+  border:2px solid #22c55e
+}
+.general a{
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#022c22
 }
 
-.card a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+/* ⭐ FEDERATE ONLINE DESTACADA ⭐ */
+.federate{
+  background:linear-gradient(160deg,rgba(14,165,233,.35),rgba(2,6,23,.9));
+  border:2px solid #38bdf8;
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,.4),
+    0 0 35px rgba(56,189,248,.45);
+  animation:glow 2.8s infinite alternate;
 }
 
-/* COLORS */
-.general a { background: linear-gradient(135deg, #22c55e, #16a34a); color:#022c22; }
-.federate a { background: linear-gradient(135deg, #0ea5e9, #0369a1); color:#e0f2fe; }
-.psitacidas a { background: linear-gradient(135deg, #2563eb, #1d4ed8); color:#e0e7ff; }
-.silvestres a { background: linear-gradient(135deg, #7c3aed, #6d28d9); color:#ede9fe; }
-.canarios a { background: linear-gradient(135deg, #eab308, #ca8a04); color:#422006; }
-.avicolombia a { background: linear-gradient(135deg, #dc2626, #7c2d12); color:#fee2e2; }
+@keyframes glow{
+  from{box-shadow:0 0 18px rgba(56,189,248,.35)}
+  to{box-shadow:0 0 40px rgba(56,189,248,.7)}
+}
+
+.federate a{
+  background:linear-gradient(135deg,#0ea5e9,#0369a1);
+  color:#e0f2fe
+}
+
+/* BADGE */
+.badge{
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#0ea5e9;
+  color:#020617;
+  font-size:11px;
+  padding:6px 14px;
+  border-radius:999px;
+  font-weight:800;
+  letter-spacing:.8px;
+}
+
+/* OTRAS SALAS */
+.psitacidas a{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#e0e7ff}
+.silvestres a{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#ede9fe}
+.canarios a{background:linear-gradient(135deg,#eab308,#ca8a04);color:#422006}
+.avicolombia a{background:linear-gradient(135deg,#dc2626,#7c2d12);color:#fee2e2}
 
 /* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 38px;
-  font-size: 12px;
-  color: #94a3b8;
-}
+.footer{text-align:center;margin-top:38px;font-size:12px;color:#94a3b8}
 
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  .container {
-    padding: 22px 14px 40px;
-  }
+@media(max-width:480px){
+  .container{padding:22px 14px 40px}
 }
 </style>
 </head>
@@ -141,44 +132,40 @@ body {
 <main class="container">
 
 <header class="header">
-  <img src="logo.png" class="logo" alt="Logo">
+  <img src="logo.png" class="logo">
   <h1>Comunidad Ornitológica</h1>
   <p>Salas especializadas de ornitología en Telegram</p>
 </header>
 
-<!-- GENERAL -->
 <section class="card general">
   <div class="icon"><img src="general.jpg"></div>
   <h2>SALA GENERAL</h2>
-  <p>Charla abierta, consultas generales y convivencia entre todos los aficionados.</p>
+  <p>Charla abierta, consultas y convivencia entre aficionados.</p>
   <a href="https://t.me/ENLACE_GENERAL">Unirme al grupo general</a>
 </section>
 
-<!-- FEDERATE ONLINE -->
 <section class="card federate">
+  <span class="badge">DESTACADO</span>
   <div class="icon"><img src="federate.jpg"></div>
   <h2>FEDÉRATE ONLINE</h2>
-  <p>Información, ayuda y trámites sobre federaciones, licencias y normativas.</p>
+  <p>Federaciones, licencias, normativa y ayuda para federarte.</p>
   <a href="https://t.me/ENLACE_FEDERATE">Unirme a esta sala</a>
 </section>
 
-<!-- PSITACIDAS -->
 <section class="card psitacidas">
   <div class="icon"><img src="psitacidas.jpg"></div>
   <h2>PSITÁCIDAS</h2>
-  <p>Loros, periquitos, agapornis y todo sobre su cría y cuidado.</p>
+  <p>Loros, periquitos, agapornis y su cría responsable.</p>
   <a href="https://t.me/ENLACE_PSITACIDAS">Unirme a esta sala</a>
 </section>
 
-<!-- SILVESTRES -->
 <section class="card silvestres">
   <div class="icon"><img src="silvestres.jpg"></div>
   <h2>SILVESTRES Y EXÓTICOS</h2>
-  <p>Jilgueros, pardillos y aves exóticas en cría responsable.</p>
+  <p>Jilgueros, pardillos y aves exóticas.</p>
   <a href="https://t.me/ENLACE_SILVESTRES">Unirme a esta sala</a>
 </section>
 
-<!-- CANARIOS -->
 <section class="card canarios">
   <div class="icon"><img src="canarios.jpg"></div>
   <h2>CANARICULTURA</h2>
@@ -186,11 +173,10 @@ body {
   <a href="https://t.me/ENLACE_CANARIOS">Unirme a esta sala</a>
 </section>
 
-<!-- AVICULTURA + COLOMBICULTURA -->
 <section class="card avicolombia">
   <div class="icon"><img src="avicultura-colombicultura.jpg"></div>
   <h2>AVICULTURA Y COLOMBICULTURA</h2>
-  <p>Gallinas, palomas, razas, manejo y selección.</p>
+  <p>Gallinas, palomas, manejo y selección.</p>
   <a href="https://t.me/ENLACE_AVICULTURA">Unirme a esta sala</a>
 </section>
 
