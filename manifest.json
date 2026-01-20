@@ -5,7 +5,7 @@
   "scope": "/comunidad-socnas/",
   "display": "standalone",
   "background_color": "#0f172a",
-  "theme_color": "#22c55e",
+  "theme_color": "#0f172a",
   "description": "Comunidad ornitológica de SOCNAS para la cesión y busquedas de aves y pájaros.",
   "icons": [
     {
