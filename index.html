@@ -28,7 +28,7 @@ body{
   margin-bottom:12px
 }
 .header h1{font-size:26px;margin-bottom:6px}
-.header p{font-size:14px;color:#9ca3af}
+.header p{font-size:14px;color:#9ca3af;line-height:1.5}
 
 /* CARD BASE */
 .card{
@@ -67,42 +67,25 @@ body{
 }
 .card a:hover{transform:translateY(-2px)}
 
-/* 🟢 FEDÉRATE ONLINE (VERDE) */
+/* 🟢 FEDÉRATE ONLINE */
 .federate{
   background:linear-gradient(160deg,rgba(34,197,94,.35),rgba(2,6,23,.9));
   border:2px solid #22c55e;
-  box-shadow:
-    0 0 0 1px rgba(34,197,94,.4),
-    0 0 35px rgba(34,197,94,.45);
-  animation:glowGreen 2.8s infinite alternate;
+  box-shadow:0 0 40px rgba(34,197,94,.6);
 }
-
-@keyframes glowGreen{
-  from{box-shadow:0 0 18px rgba(34,197,94,.35)}
-  to{box-shadow:0 0 40px rgba(34,197,94,.7)}
-}
-
 .federate a{
   background:linear-gradient(135deg,#22c55e,#16a34a);
   color:#022c22
 }
-
-/* BADGE */
 .badge{
-  position:absolute;
-  top:-12px;
-  left:50%;
+  position:absolute;top:-12px;left:50%;
   transform:translateX(-50%);
-  background:#22c55e;
-  color:#022c22;
-  font-size:11px;
-  padding:6px 14px;
-  border-radius:999px;
-  font-weight:800;
-  letter-spacing:.8px;
+  background:#22c55e;color:#022c22;
+  font-size:11px;padding:6px 14px;
+  border-radius:999px;font-weight:800
 }
 
-/* 🔵 SALA GENERAL (AZUL TELEGRAM) */
+/* 🔵 SALA GENERAL */
 .general{
   background:linear-gradient(160deg,rgba(0,136,204,.35),rgba(2,6,23,.9));
   border:2px solid #0088cc;
@@ -118,6 +101,26 @@ body{
 .silvestres a{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#ede9fe}
 .canarios a{background:linear-gradient(135deg,#eab308,#ca8a04);color:#422006}
 .avicolombia a{background:linear-gradient(135deg,#dc2626,#7c2d12);color:#fee2e2}
+
+/* 🟢 WHATSAPP */
+.whatsapp{
+  background:linear-gradient(160deg,rgba(37,211,102,.35),rgba(2,6,23,.9));
+  border:2px solid #25d366;
+}
+.whatsapp a{
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  color:#022c22
+}
+
+/* ⚪ CONTACTO */
+.contacto{
+  background:linear-gradient(160deg,rgba(148,163,184,.35),rgba(2,6,23,.9));
+  border:2px solid #94a3b8;
+}
+.contacto a{
+  background:linear-gradient(135deg,#e5e7eb,#9ca3af);
+  color:#020617;
+}
 
 /* FOOTER */
 .footer{text-align:center;margin-top:38px;font-size:12px;color:#94a3b8}
@@ -135,29 +138,25 @@ body{
 <header class="header">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimRQSxIj63LZXEmoto2m8q2SfQJYMfyscBieI6BeptyBu0xwGu053U06C7vL_i7rH3-euuslKage3qzkXUGMOA5DYrioA3wMHmBcfolMBpDg9wb1Dw4SOlJGFvdwNqPMzt3H2gDFYdDv74sdECVhszqR6vNGsQxEsTapWboLiFdfMYq6PkGi1n3CdXadI/s1600/Nebhula%20-%201.png" class="logo">
   <h1>Comunidad Ornitológica SOCNAS</h1>
-  <p>Grupo solo para buscar o ceder ejemplares y accesorios.
-
-Mensajes claros: qué se busca/ofrece y zona.
-
-❌ Nada de charlas, debates, spam ni publicidad.
-
-Solo pájaros y aves legales y en buen estado.
-
+  <p>Grupo solo para buscar o ceder ejemplares y accesorios.<br>
+Mensajes claros: qué se busca/ofrece y zona.<br>
+❌ Nada de charlas, debates, spam ni publicidad.<br>
+Solo pájaros y aves legales y en buen estado.<br>
 Respeto obligatorio; problemas por privado.</p>
 </header>
 
 <!-- 🟢 FEDÉRATE ONLINE -->
 <section class="card federate">
   <span class="badge">PRIORITARIO</span>
-  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLB18oVEJuTiVUQaj1v1zOzCYzxNS8v093XZN5rMjsp7cYOI-u_1YmALePWgJFUIZdAS95oFIKP_kZTKUUW8kNdKgZqMnGFc3FvFiRMyBBG8Z3Brrz91xGa1dUGkrIErcqDDhCbDyzCk_wiodwEsRlJ_MjmpF4N4T0jHHM7TsQKl1Rzib9zHpi4h0isTQ/s1600/nebhula%20%2875%29.png"></div>
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/.../federate.png"></div>
   <h2>FEDÉRATE ONLINE</h2>
-  <p>Federate Online con SOCNAS y forma parte de un gran número de criadores nacionales federados, Anillas federativas y carnet...</p>
+  <p>Federate Online con SOCNAS y forma parte de un gran número de criadores nacionales federados, anillas federativas y carnet.</p>
   <a href="https://t.me/ENLACE_FEDERATE">Ir a web oficial SOCNAS</a>
 </section>
 
 <!-- 🔵 SALA GENERAL -->
 <section class="card general">
-  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-UMCOKRvJ2qppvA-Qe75rQ4DnabSSnssf57Xi4aRvTP0Uy-ca1qIk-y9WUc6NAO-_zcU_qemRRxa6FwUKPmAuO4ntb45WNOj_eVwCaAoiByBgMlXsQagex6UMHApStkeYdgaa2n1RvqONsmA9tyQaqSLoAnRINToUdKn9hsbMKULjk2xq0nDzknGp2Hk/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo.png"></div>
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/.../general.png"></div>
   <h2>SALA GENERAL</h2>
   <p>Charla abierta, consultas y convivencia entre aficionados.</p>
   <a href="https://t.me/ENLACE_GENERAL">Unirme al grupo general</a>
@@ -189,6 +188,22 @@ Respeto obligatorio; problemas por privado.</p>
   <h2>AVICULTURA Y COLOMBICULTURA</h2>
   <p>Gallinas, palomas, manejo y selección.</p>
   <a href="https://t.me/ENLACE_AVICULTURA">Unirme a esta sala</a>
+</section>
+
+<!-- 🟢 WHATSAPP -->
+<section class="card whatsapp">
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/.../whatsapp.png"></div>
+  <h2>GRUPO WHATSAPP</h2>
+  <p>Grupo alternativo para charlas rápidas, avisos y coordinación de ejemplares.</p>
+  <a href="https://chat.whatsapp.com/ENLACE_WHATSAPP">Unirme al grupo WhatsApp</a>
+</section>
+
+<!-- ⚪ CONTACTO -->
+<section class="card contacto">
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/.../contacto.png"></div>
+  <h2>CONTACTO</h2>
+  <p>¿Dudas, sugerencias o colaboración? Escríbenos directamente.</p>
+  <a href="mailto:contacto@tudominio.com">Contactar</a>
 </section>
 
 <footer class="footer">
