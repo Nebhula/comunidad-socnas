@@ -6,7 +6,7 @@
 <title>Comunidad Ornitológica | Telegram</title>
 
 <style>
-/* RESET BÁSICO */
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,21 +15,21 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #0b1220;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: #e5e7eb;
 }
 
 /* CONTENEDOR */
 .container {
-  max-width: 420px;
+  max-width: 440px;
   margin: 0 auto;
-  padding: 28px 16px 40px;
+  padding: 28px 16px 50px;
 }
 
 /* HEADER */
 .header {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 34px;
 }
 
 .logo {
@@ -42,92 +42,77 @@ body {
 }
 
 .header h1 {
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 6px;
 }
 
 .header p {
   font-size: 14px;
-  color: #94a3b8;
-  line-height: 1.4;
+  color: #9ca3af;
 }
 
-/* BOTÓN PRINCIPAL */
-.main-btn {
-  display: block;
+/* TARJETAS */
+.card {
+  background: linear-gradient(180deg, #020617, #111827);
+  border-radius: 22px;
+  padding: 26px 20px 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.55);
   text-align: center;
+}
+
+/* ICONO REDONDO */
+.card .icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 14px;
+  border: 3px solid rgba(255,255,255,.15);
+}
+
+.card .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TITULO */
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+/* BOTÓN */
+.card a {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #22c55e, #16a34a);
   color: #022c22;
-  padding: 16px;
-  border-radius: 18px;
   font-weight: 700;
   text-decoration: none;
-  margin-bottom: 26px;
-  transition: transform .2s ease;
-}
-
-.main-btn:hover {
-  transform: scale(1.03);
-}
-
-/* LINKS */
-.links {
-  display: grid;
-  gap: 14px;
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: #111827;
-  padding: 16px;
-  border-radius: 18px;
-  text-decoration: none;
-  color: #e5e7eb;
-  box-shadow: 0 8px 20px rgba(0,0,0,.35);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(0,0,0,.5);
-}
-
-/* ICONOS */
-.icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon svg {
-  width: 26px;
-  height: 26px;
-  fill: #ffffff;
+.card a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34,197,94,.45);
 }
 
 /* COLORES POR SECCIÓN */
-.federate { background:#16a34a; }
-.psitacidas { background:#2563eb; }
-.canarios { background:#eab308; }
-.silvestres { background:#7c3aed; }
-.avicultura { background:#dc2626; }
-.colombicultura { background:#0ea5a4; }
-
-.card span {
-  font-size: 16px;
-  font-weight: 600;
-}
+.psitacidas a { background: linear-gradient(135deg, #2563eb, #1d4ed8); color:#e0e7ff; }
+.silvestres a { background: linear-gradient(135deg, #7c3aed, #6d28d9); color:#ede9fe; }
+.canarios a   { background: linear-gradient(135deg, #eab308, #ca8a04); color:#422006; }
+.avicultura a { background: linear-gradient(135deg, #dc2626, #b91c1c); color:#fee2e2; }
+.colombicultura a { background: linear-gradient(135deg, #0ea5a4, #0f766e); color:#ccfbf1; }
 
 /* FOOTER */
 .footer {
   text-align: center;
-  margin-top: 32px;
+  margin-top: 36px;
   font-size: 12px;
   color: #94a3b8;
 }
@@ -135,7 +120,7 @@ body {
 /* RESPONSIVE */
 @media (max-width: 480px) {
   .container {
-    padding: 22px 14px 34px;
+    padding: 22px 14px 40px;
   }
 }
 </style>
@@ -149,65 +134,52 @@ body {
   <header class="header">
     <img src="logo.png" alt="Logo Ornitología" class="logo">
     <h1>Comunidad Ornitológica</h1>
-    <p>Salas temáticas de ornitología en Telegram.<br>Elige tu especialidad.</p>
+    <p>Salas especializadas de ornitología en Telegram</p>
   </header>
 
-  <!-- BOTÓN PRINCIPAL -->
-  <a href="https://t.me/ENLACE_GRUPO_GENERAL" target="_blank" class="main-btn">
-    ENTRAR AL GRUPO GENERAL
-  </a>
+  <!-- PSITÁCIDAS -->
+  <section class="card psitacidas">
+    <div class="icon">
+      <img src="psitacidas.jpg" alt="Psitácidas">
+    </div>
+    <h2>PSITÁCIDAS</h2>
+    <a href="https://t.me/ENLACE_PSITACIDAS" target="_blank">Unirme a esta sala</a>
+  </section>
 
-  <!-- SECCIONES -->
-  <section class="links">
+  <!-- SILVESTRES Y EXÓTICOS -->
+  <section class="card silvestres">
+    <div class="icon">
+      <img src="silvestres.jpg" alt="Silvestres y Exóticos">
+    </div>
+    <h2>SILVESTRES Y EXÓTICOS</h2>
+    <a href="https://t.me/ENLACE_SILVESTRES" target="_blank">Unirme a esta sala</a>
+  </section>
 
-    <a href="https://t.me/ENLACE_FEDERATE" target="_blank" class="card">
-      <div class="icon federate">
-        <!-- ICONO TROFEO / FEDERACIÓN -->
-        <svg viewBox="0 0 24 24"><path d="M6 2h12v3a6 6 0 01-12 0V2zm-2 3h2a6 6 0 006 6v3H8v2h8v-2h-4v-3a6 6 0 006-6h2V2h-2"/></svg>
-      </div>
-      <span>Fedérate Online</span>
-    </a>
+  <!-- CANARICULTURA -->
+  <section class="card canarios">
+    <div class="icon">
+      <img src="canarios.jpg" alt="Canaricultura">
+    </div>
+    <h2>CANARICULTURA</h2>
+    <a href="https://t.me/ENLACE_CANARICULTURA" target="_blank">Unirme a esta sala</a>
+  </section>
 
-    <a href="https://t.me/ENLACE_PSITACIDAS" target="_blank" class="card">
-      <div class="icon psitacidas">
-        <!-- ICONO LORO -->
-        <svg viewBox="0 0 24 24"><path d="M6 3c6 0 12 4 12 9 0 4-3 7-7 7H9l-3 3V3z"/></svg>
-      </div>
-      <span>Psitácidas</span>
-    </a>
+  <!-- AVICULTURA -->
+  <section class="card avicultura">
+    <div class="icon">
+      <img src="avicultura.jpg" alt="Avicultura">
+    </div>
+    <h2>AVICULTURA</h2>
+    <a href="https://t.me/ENLACE_AVICULTURA" target="_blank">Unirme a esta sala</a>
+  </section>
 
-    <a href="https://t.me/ENLACE_CANARICULTURA" target="_blank" class="card">
-      <div class="icon canarios">
-        <!-- ICONO CANARIO -->
-        <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 016 6c0 5-6 12-6 12S6 14 6 9a6 6 0 016-6z"/></svg>
-      </div>
-      <span>Canaricultura</span>
-    </a>
-
-    <a href="https://t.me/ENLACE_SILVESTRES" target="_blank" class="card">
-      <div class="icon silvestres">
-        <!-- ICONO AVE EN VUELO -->
-        <svg viewBox="0 0 24 24"><path d="M2 12l8-4 4 4 8-4-8 8-4-4-8 4z"/></svg>
-      </div>
-      <span>Silvestres y Éxitos</span>
-    </a>
-
-    <a href="https://t.me/ENLACE_AVICULTURA" target="_blank" class="card">
-      <div class="icon avicultura">
-        <!-- ICONO GALLINA -->
-        <svg viewBox="0 0 24 24"><path d="M12 4c4 0 7 3 7 7s-3 7-7 7H6v-2h6a5 5 0 000-10H9V4z"/></svg>
-      </div>
-      <span>Avicultura</span>
-    </a>
-
-    <a href="https://t.me/ENLACE_COLOMBICULTURA" target="_blank" class="card">
-      <div class="icon colombicultura">
-        <!-- ICONO PALOMA -->
-        <svg viewBox="0 0 24 24"><path d="M3 12l6-4 6 2 6-4-6 8-6-2-6 4z"/></svg>
-      </div>
-      <span>Colombicultura</span>
-    </a>
-
+  <!-- COLOMBICULTURA -->
+  <section class="card colombicultura">
+    <div class="icon">
+      <img src="colombicultura.jpg" alt="Colombicultura">
+    </div>
+    <h2>COLOMBICULTURA</h2>
+    <a href="https://t.me/ENLACE_COLOMBICULTURA" target="_blank">Unirme a esta sala</a>
   </section>
 
   <footer class="footer">
