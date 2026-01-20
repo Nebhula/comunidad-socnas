@@ -5,15 +5,15 @@
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#22c55e",
-  "description": "Grupo especializado en aves, salas de Telegram, WhatsApp y contacto.",
+  "description": "Comunidad ornitológica de SOCNAS para la cesión y busquedas de aves y pájaros.",
   "icons": [
     {
-      "src": "images/icon-192.png",
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLEqbfibaBOSBqdjRVMeXmseV1GjPXnvmfiGwxLc9-WBvMQl17DjSN-Ap91FewyYyt9_6xOp5ivtHwElwj4FBr7nOB5F0egZmBI5eCqng7cw40x-LbF2qW88X21pIrBbsQOjeqCm6-9fA0Dchx0P2LAO3TCKDOa7G27f9QvxrvyofFurWdRKEJkx-4Zzk/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%287%29.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "images/icon-512.png",
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxIn9AJ6dBbJG5q0EWeRB54Di10FmMCMg4RzU4oHEOaEo9f3AZnnGrcqUGNG9YC1Bp-CB1shhHndnPy7HFMw1dZk8-YUdrhw7azTUzcJ1NudywVcHtlamMLOYludj8a1-nWpn3S0p_H3lvarpQHoUe7XhmCdZtKwfvkR5fTI2WUI5niXxVYlhqIEXSzvo/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%286%29.png",
       "sizes": "512x512",
       "type": "image/png"
     }
