@@ -61,7 +61,7 @@ body {
   text-align: center;
 }
 
-/* GENERAL DESTACADO */
+/* GENERAL */
 .card.general {
   background: linear-gradient(180deg, #052e16, #14532d);
   border: 2px solid #22c55e;
@@ -101,22 +101,35 @@ body {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-/* BOTÓN GENERAL */
+.card a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+}
+
+/* COLORES POR SECCIÓN */
 .general a {
   background: linear-gradient(135deg, #22c55e, #16a34a);
   color: #022c22;
 }
 
-/* BOTONES POR SALA */
-.psitacidas a { background: linear-gradient(135deg, #2563eb, #1d4ed8); color:#e0e7ff; }
-.silvestres a { background: linear-gradient(135deg, #7c3aed, #6d28d9); color:#ede9fe; }
-.canarios a   { background: linear-gradient(135deg, #eab308, #ca8a04); color:#422006; }
-.avicultura a { background: linear-gradient(135deg, #dc2626, #b91c1c); color:#fee2e2; }
-.colombicultura a { background: linear-gradient(135deg, #0ea5a4, #0f766e); color:#ccfbf1; }
+.psitacidas a {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #e0e7ff;
+}
 
-.card a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+.silvestres a {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #ede9fe;
+}
+
+.canarios a {
+  background: linear-gradient(135deg, #eab308, #ca8a04);
+  color: #422006;
+}
+
+.avicolombia a {
+  background: linear-gradient(135deg, #dc2626, #7c2d12);
+  color: #fee2e2;
 }
 
 /* FOOTER */
@@ -153,7 +166,9 @@ body {
       <img src="general.jpg" alt="Sala General">
     </div>
     <h2>SALA GENERAL</h2>
-    <a href="https://t.me/ENLACE_GENERAL" target="_blank">Unirme al grupo general</a>
+    <a href="https://t.me/ENLACE_GENERAL" target="_blank">
+      Unirme al grupo general
+    </a>
   </section>
 
   <!-- PSITÁCIDAS -->
@@ -162,7 +177,9 @@ body {
       <img src="psitacidas.jpg" alt="Psitácidas">
     </div>
     <h2>PSITÁCIDAS</h2>
-    <a href="https://t.me/ENLACE_PSITACIDAS" target="_blank">Unirme a esta sala</a>
+    <a href="https://t.me/ENLACE_PSITACIDAS" target="_blank">
+      Unirme a esta sala
+    </a>
   </section>
 
   <!-- SILVESTRES Y EXÓTICOS -->
@@ -171,7 +188,9 @@ body {
       <img src="silvestres.jpg" alt="Silvestres y Exóticos">
     </div>
     <h2>SILVESTRES Y EXÓTICOS</h2>
-    <a href="https://t.me/ENLACE_SILVESTRES" target="_blank">Unirme a esta sala</a>
+    <a href="https://t.me/ENLACE_SILVESTRES" target="_blank">
+      Unirme a esta sala
+    </a>
   </section>
 
   <!-- CANARICULTURA -->
@@ -180,25 +199,20 @@ body {
       <img src="canarios.jpg" alt="Canaricultura">
     </div>
     <h2>CANARICULTURA</h2>
-    <a href="https://t.me/ENLACE_CANARICULTURA" target="_blank">Unirme a esta sala</a>
+    <a href="https://t.me/ENLACE_CANARICULTURA" target="_blank">
+      Unirme a esta sala
+    </a>
   </section>
 
-  <!-- AVICULTURA -->
-  <section class="card avicultura">
+  <!-- AVICULTURA Y COLOMBICULTURA -->
+  <section class="card avicolombia">
     <div class="icon">
-      <img src="avicultura.jpg" alt="Avicultura">
+      <img src="avicultura-colombicultura.jpg" alt="Avicultura y Colombicultura">
     </div>
-    <h2>AVICULTURA</h2>
-    <a href="https://t.me/ENLACE_AVICULTURA" target="_blank">Unirme a esta sala</a>
-  </section>
-
-  <!-- COLOMBICULTURA -->
-  <section class="card colombicultura">
-    <div class="icon">
-      <img src="colombicultura.jpg" alt="Colombicultura">
-    </div>
-    <h2>COLOMBICULTURA</h2>
-    <a href="https://t.me/ENLACE_COLOMBICULTURA" target="_blank">Unirme a esta sala</a>
+    <h2>AVICULTURA Y COLOMBICULTURA</h2>
+    <a href="https://t.me/ENLACE_AVICULTURA_COLOMBICULTURA" target="_blank">
+      Unirme a esta sala
+    </a>
   </section>
 
   <footer class="footer">
@@ -207,5 +221,4 @@ body {
 
 </main>
 
-</body>
-</html>
+</body
