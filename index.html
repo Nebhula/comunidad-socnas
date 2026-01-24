@@ -34,7 +34,7 @@ if('serviceWorker' in navigator){
 
 body{
   font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
-  background:#d9dbdc;
+  background:#c8cacb; /* Fondo más oscuro que el original #d9dbdc */
   color:#000000;
 }
 
@@ -45,15 +45,15 @@ body{
 }
 
 /* HEADER */
-.header{text-align:center;margin-bottom:24px}
+.header{text-align:center;margin-bottom:28px}
 .logo{
-  width:180px;
+  width:240px;
   height:auto;
   max-width:100%;
-  margin-bottom:16px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  margin-bottom:20px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
 }
-.header h1{font-size:22px;font-weight:600;margin-bottom:8px;color:#128c7e}
+.header h1{font-size:24px;font-weight:700;margin-bottom:10px;color:#128c7e}
 .header p{font-size:14px;color:#667781;line-height:1.5}
 
 /* CARD BASE */
@@ -62,18 +62,18 @@ body{
   border-radius:12px;
   padding:24px 20px 22px;
   margin-bottom:16px;
-  box-shadow:0 1px 2px rgba(0,0,0,0.1);
+  box-shadow:0 2px 4px rgba(0,0,0,0.12);
   text-align:center;
   position:relative;
-  border:1px solid #e6e6e6;
+  border:1px solid #d0d2d3;
 }
 
 /* ICON */
 .icon{
   width:80px;height:80px;border-radius:50%;
   overflow:hidden;margin:0 auto 14px;
-  border:2px solid #e6e6e6;
-  box-shadow:0 1px 3px rgba(0,0,0,0.1)
+  border:2px solid #d8dadb;
+  box-shadow:0 2px 4px rgba(0,0,0,0.08);
 }
 .icon img{width:100%;height:100%;object-fit:cover}
 
@@ -104,8 +104,8 @@ body{
 
 /* 🟢 FEDÉRATE ONLINE */
 .federate{
-  background:#e8f5e9;
-  border:1px solid #c8e6c9;
+  background:#e0f0e3;
+  border:1px solid #c2e0c6;
 }
 .federate a{
   background:#25d366;
@@ -121,7 +121,7 @@ body{
   border-radius:999px;
   font-weight:700;
   font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
-  box-shadow:0 2px 4px rgba(0,0,0,0.2);
+  box-shadow:0 2px 4px rgba(0,0,0,0.25);
 }
 
 /* OTRAS SALAS */
@@ -146,13 +146,14 @@ body{
   font-size:12px;
   color:#667781;
   padding-top:16px;
-  border-top:1px solid #e6e6e6;
+  border-top:1px solid #d0d2d3;
 }
 
 @media(max-width:480px){
   .container{padding:16px 12px 32px}
   .card{padding:20px 16px 18px}
-  .logo{width:150px;}
+  .logo{width:200px; margin-bottom:16px;}
+  .header h1{font-size:22px;}
 }
 </style>
 </head>
