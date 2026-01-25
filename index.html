@@ -39,6 +39,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  position: relative;
 }
 
 .container {
@@ -175,6 +176,43 @@ body {
   font-size: 14px;
 }
 
+/* FLOATING BUTTONS */
+#installButton,
+#shareButton {
+  position: fixed;
+  right: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+#installButton {
+  bottom: 80px;
+  background: #2d3748;
+  color: #63b3ed;
+  display: none;
+}
+#shareButton {
+  bottom: 20px;
+  background: #2d3748;
+  color: #48bb78;
+}
+#installButton:hover,
+#shareButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+#installButton:active,
+#shareButton:active {
+  transform: translateY(0);
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .container {
@@ -201,6 +239,16 @@ body {
   }
   .logo {
     width: 200px;
+  }
+  #installButton,
+  #shareButton {
+    right: 16px;
+    bottom: 16px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  #installButton {
+    bottom: 70px;
   }
 }
 
@@ -235,68 +283,124 @@ body {
 </head>
 
 <body>
-<main class="container">
-  <header class="header">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitOiwQN8JAHzh0f3xytNz6qDGz-9Kn9It68vdWWiagaagRyx2T90g00oGhMrE-LyBMKpcZYWPKknh7ydlVLKIyBMBYZhcxX8VmnMRJVl8ZrPQLQ0j2zTVWG7wV_zOV8AjTZPnSfO0W8Kzog4TaqCJcKI_M1KWgriUoW36X-vRjZpTqC2mrujhSBJWsik8/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2812%29.png" class="logo" alt="SOCNAS Logo">
-    <h1>Comunidad Ornitológica SOCNAS</h1>
-    <p>Grupo solo para buscar o ceder ejemplares y accesorios.<br>
-    Mensajes claros: qué se busca/ofrece y zona.<br>
-    ❌ Nada de charlas, debates, spam ni publicidad.<br>
-    Solo pájaros y aves legales y en buen estado.<br>
-    Respeto obligatorio; problemas por privado.</p>
-  </header>
+  <button id="installButton">📲 Instalar App</button>
+  <button id="shareButton">📤 Compartir</button>
 
-  <section class="card psitacidas">
-    <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhy9PL-kH8TcRPRzzRhR8guOURomyZOuoNligqu6dXcHbADLcF67jyvHLXWLXbhRKQ8UWyyW3rV10u9lav89HEMSgTUrYY1hXz6GNUM58fLhV1ztlJ2DRJ36r93ZcyB9NYulkYmJdV5LVCoWy0cmZYHLxiBojlRY-xWrjFeO8uPkSkmauFfWSvMk4jTAyM/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%281%29.png"></div>
-    <h2>PSITÁCIDAS</h2>
-    <p>Solo para Cesiones y búsquedas de Loros, periquitos, agapornis, Ninfas etc... y accesorios o complementos.</p>
-    <a href="https://chat.whatsapp.com/DE42pHakzn11HCAGtJWAJE">Unirme a esta sala</a>
-  </section>
+  <main class="container">
+    <header class="header">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitOiwQN8JAHzh0f3xytNz6qDGz-9Kn9It68vdWWiagaagRyx2T90g00oGhMrE-LyBMKpcZYWPKknh7ydlVLKIyBMBYZhcxX8VmnMRJVl8ZrPQLQ0j2zTVWG7wV_zOV8AjTZPnSfO0W8Kzog4TaqCJcKI_M1KWgriUoW36X-vRjZpTqC2mrujhSBJWsik8/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2812%29.png" class="logo" alt="SOCNAS Logo">
+      <h1>Comunidad Ornitológica SOCNAS</h1>
+      <p>Grupo solo para buscar o ceder ejemplares y accesorios.<br>
+      Mensajes claros: qué se busca/ofrece y zona.<br>
+      ❌ Nada de charlas, debates, spam ni publicidad.<br>
+      Solo pájaros y aves legales y en buen estado.<br>
+      Respeto obligatorio; problemas por privado.</p>
+    </header>
 
-  <section class="card silvestres">
-    <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga2Wb7f4W3i_VMuGzxYyUT5GQoSMA-I_VCl-I5GAaNHWKyZg9LXJozwZB6D-UKMTjKWtfx9yhiZDPgPYoI84ccEghpfWf0BN9_-wkb_rcy6XbOFiohrgxRW0rebRR8GnuYO6bdCQfyRKPGxvW9mSYYNU3_gDdzHd5xWTvTdJlWgdKtEGEqNLTUjxB75Hw/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%282%29.png"></div>
-    <h2>SILVESTRES Y EXÓTICOS</h2>
-    <p>Solo para Cesiones y búsquedas de SILVESTRES: Jilgueros, Pardillos, Vederones etc.. y aves EXÓTICAS: Diamantes Gould etc...</p>
-    <a href="https://chat.whatsapp.com/Hp5vJqbrIzh7BHkYmCSIFe">Unirme a esta sala</a>
-  </section>
+    <section class="card psitacidas">
+      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhy9PL-kH8TcRPRzzRhR8guOURomyZOuoNligqu6dXcHbADLcF67jyvHLXWLXbhRKQ8UWyyW3rV10u9lav89HEMSgTUrYY1hXz6GNUM58fLhV1ztlJ2DRJ36r93ZcyB9NYulkYmJdV5LVCoWy0cmZYHLxiBojlRY-xWrjFeO8uPkSkmauFfWSvMk4jTAyM/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%281%29.png"></div>
+      <h2>PSITÁCIDAS</h2>
+      <p>Solo para Cesiones y búsquedas de Loros, periquitos, agapornis, Ninfas etc... y accesorios o complementos.</p>
+      <a href="https://chat.whatsapp.com/DE42pHakzn11HCAGtJWAJE">Unirme a esta sala</a>
+    </section>
 
-  <section class="card canarios">
-    <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYFxotCSSvp4oIQLdVqvbAuIv-D_pu-ghACYJ_24NTRWonslr-wUOI83MOYNSQ21X6cAqmjWUIfl06KdV_nuwTVxaeJvEsoT9bVu1g1WnYRn3Y7UfC-BGQNklJ_RorPU9RQzLJ4u5WPo47KgHqyhGE-XULAl679WrWd7sU-KI8QbzFA9rX1KAki9lnt2M/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%283%29.png"></div>
-    <h2>CANARICULTURA</h2>
-    <p>Solo para Cesiones y búsquedas de ejemplares de CANARIOS: canto, color, postura, sus accesorios y complementos...</p>
-    <a href="https://chat.whatsapp.com/L7O4Gas9NG3AEfQDkqDQuQ">Unirme a esta sala</a>
-  </section>
+    <section class="card silvestres">
+      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga2Wb7f4W3i_VMuGzxYyUT5GQoSMA-I_VCl-I5GAaNHWKyZg9LXJozwZB6D-UKMTjKWtfx9yhiZDPgPYoI84ccEghpfWf0BN9_-wkb_rcy6XbOFiohrgxRW0rebRR8GnuYO6bdCQfyRKPGxvW9mSYYNU3_gDdzHd5xWTvTdJlWgdKtEGEqNLTUjxB75Hw/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%282%29.png"></div>
+      <h2>SILVESTRES Y EXÓTICOS</h2>
+      <p>Solo para Cesiones y búsquedas de SILVESTRES: Jilgueros, Pardillos, Vederones etc.. y aves EXÓTICAS: Diamantes Gould etc...</p>
+      <a href="https://chat.whatsapp.com/Hp5vJqbrIzh7BHkYmCSIFe">Unirme a esta sala</a>
+    </section>
 
-  <section class="card avicolombia">
-    <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXdmtUvGIbJb0OD4f-X7CSEH0ycgoym8MQfIgAx6qsLItI1Z1X1cy8k5Ya0Q3qs6rgtQfw_l9xp35ufbm1FCp8a3xF4QBVcRHe0EtYoJ3nDgrgCFr-Nj6h2PAcyhDmTY4nb-42MFkkaG5nHsL2uXADYe5qfuR5R7q2pgvJO0k4UHDVbZwmvxgSGmRbBbI/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%284%29.png"></div>
-    <h2>AVICULTURA Y COLOMBICULTURA</h2>
-    <p>Solo para Cesiones y búsquedas de ejemplares de aves Gallinaceas, Patos, Faisanes, Codornicez, Perdices, TODO AVE DE CORRAL y palomas - palomos de raza...</p>
-    <a href="https://chat.whatsapp.com/GVN0hf6CtlH02kQoXfwl4X">Unirme a esta sala</a>
-  </section>
+    <section class="card canarios">
+      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYFxotCSSvp4oIQLdVqvbAuIv-D_pu-ghACYJ_24NTRWonslr-wUOI83MOYNSQ21X6cAqmjWUIfl06KdV_nuwTVxaeJvEsoT9bVu1g1WnYRn3Y7UfC-BGQNklJ_RorPU9RQzLJ4u5WPo47KgHqyhGE-XULAl679WrWd7sU-KI8QbzFA9rX1KAki9lnt2M/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%283%29.png"></div>
+      <h2>CANARICULTURA</h2>
+      <p>Solo para Cesiones y búsquedas de ejemplares de CANARIOS: canto, color, postura, sus accesorios y complementos...</p>
+      <a href="https://chat.whatsapp.com/L7O4Gas9NG3AEfQDkqDQuQ">Unirme a esta sala</a>
+    </section>
 
-  <section class="card federate">
-    <span class="badge">PRIORITARIO</span>
-    <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwoudJJadPxFpzgT1YAknOjOvNAJnxd2YQrhmNJPr2q4ovRWTxYxSS5ShVLS4JIuaAaI_lpMD9DfEp4wiLQTviVN43qCKRLjLTJi2404Jq2ML8vqbKIAgcJvF8uxndMAsrJ7dTlOVbBEJzAkuws9C2H5rnkPdYVwqULFtSV37kjkz25FUrT2MnQ-D7XGQ/s1600/nebhula%20%2875%29.png"></div>
-    <h2>¡FEDÉRATE ONLINE!</h2>
-    <p>Federate Online con SOCNAS y forma parte de un gran número de criadores nacionales federados, anillas federativas y carnet para todo tipo de géneros de ejemplares Ornitología, Avicultura y Colombicultura. A nivel nacional España - Baleares - Ceuta - Melilla y Portugal..</p>
-    <a href="https://www.socnas.org/">Ir a web oficial SOCNAS</a>
-  </section>
+    <section class="card avicolombia">
+      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXdmtUvGIbJb0OD4f-X7CSEH0ycgoym8MQfIgAx6qsLItI1Z1X1cy8k5Ya0Q3qs6rgtQfw_l9xp35ufbm1FCp8a3xF4QBVcRHe0EtYoJ3nDgrgCFr-Nj6h2PAcyhDmTY4nb-42MFkkaG5nHsL2uXADYe5qfuR5R7q2pgvJO0k4UHDVbZwmvxgSGmRbBbI/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%284%29.png"></div>
+      <h2>AVICULTURA Y COLOMBICULTURA</h2>
+      <p>Solo para Cesiones y búsquedas de ejemplares de aves Gallinaceas, Patos, Faisanes, Codornicez, Perdices, TODO AVE DE CORRAL y palomas - palomos de raza...</p>
+      <a href="https://chat.whatsapp.com/GVN0hf6CtlH02kQoXfwl4X">Unirme a esta sala</a>
+    </section>
 
-  <section class="card contacto">
-    <div class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:50px;height:50px;color:#48bb78;">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-      </svg>
-    </div>
-    <h2>CONTACTO</h2>
-    <p>¿Dudas, sugerencias o colaboración? Escríbenos directamente.</p>
-    <a href="https://wa.me/34677163664">Contactar por WhatsApp</a>
-  </section>
+    <section class="card federate">
+      <span class="badge">PRIORITARIO</span>
+      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwoudJJadPxFpzgT1YAknOjOvNAJnxd2YQrhmNJPr2q4ovRWTxYxSS5ShVLS4JIuaAaI_lpMD9DfEp4wiLQTviVN43qCKRLjLTJi2404Jq2ML8vqbKIAgcJvF8uxndMAsrJ7dTlOVbBEJzAkuws9C2H5rnkPdYVwqULFtSV37kjkz25FUrT2MnQ-D7XGQ/s1600/nebhula%20%2875%29.png"></div>
+      <h2>¡FEDÉRATE ONLINE!</h2>
+      <p>Federate Online con SOCNAS y forma parte de un gran número de criadores nacionales federados, anillas federativas y carnet para todo tipo de géneros de ejemplares Ornitología, Avicultura y Colombicultura. A nivel nacional España - Baleares - Ceuta - Melilla y Portugal..</p>
+      <a href="https://www.socnas.org/">Ir a web oficial SOCNAS</a>
+    </section>
 
-  <footer class="footer">
-    Comunidad Ornitológica · WhatsApp
-  </footer>
-</main>
+    <section class="card contacto">
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:50px;height:50px;color:#48bb78;">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </div>
+      <h2>CONTACTO</h2>
+      <p>¿Dudas, sugerencias o colaboración? Escríbenos directamente.</p>
+      <a href="https://wa.me/34677163664">Contactar por WhatsApp</a>
+    </section>
+
+    <footer class="footer">
+      Comunidad Ornitológica · WhatsApp
+    </footer>
+  </main>
+
+  <script>
+    let deferredPrompt;
+    const installButton = document.getElementById('installButton');
+    const shareButton = document.getElementById('shareButton');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installButton.style.display = 'block';
+    });
+
+    installButton.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        installButton.style.display = 'none';
+      }
+      deferredPrompt = null;
+    });
+
+    window.addEventListener('appinstalled', () => {
+      installButton.style.display = 'none';
+    });
+
+    shareButton.addEventListener('click', async () => {
+      const shareData = {
+        title: 'Comunidad Ornitológica SOCNAS',
+        text: 'Grupos de WhatsApp para cesión y búsqueda de ejemplares ornitológicos por categorías. ¡Únete a la comunidad!',
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(shareData.url);
+          alert('¡Enlace copiado! Pégalo donde quieras compartirlo.');
+        }
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          const tempInput = document.createElement('input');
+          tempInput.value = shareData.url;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          alert('¡Enlace copiado al portapapeles!');
+        }
+      }
+    });
+  </script>
 </body>
 </html>
 
