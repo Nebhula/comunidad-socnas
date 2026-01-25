@@ -10,14 +10,14 @@
 <meta property="og:url" content="https://tu-dominio.com/comunidad-socnas/">
 <meta property="og:title" content="Comunidad Ornitológica SOCNAS">
 <meta property="og:description" content="Grupos de WhatsApp para cesión y búsqueda de ejemplares ornitológicos por categorías. ¡Únete a la comunidad!">
-<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUL-cVw6lwkwNXWe6gWNYaxe2xbIiLaf-614HQHsHT4oHYFvBdAlY6ML0MgZv3LGpNSq5IMbpwE9eCz-4OZhO8UvxfRCRj6XFSJCABDJO6ujrwOIE5Z0x1I841TYqSXx9ZSddI2vShBD_UXqKcbB_GrQfw7jO23gLYNlrXE9A3auyXPREzzeiIgnPR5yE/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2811%29.png">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitOiwQN8JAHzh0f3xytNz6qDGz-9Kn9It68vdWWiagaagRyx2T90g00oGhMrE-LyBMKpcZYWPKknh7ydlVLKIyBMBYZhcxX8VmnMRJVl8ZrPQLQ0j2zTVWG7wV_zOV8AjTZPnSfO0W8Kzog4TaqCJcKI_M1KWgriUoW36X-vRjZpTqC2mrujhSBJWsik8/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2812%29.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://tu-dominio.com/comunidad-socnas/">
 <meta property="twitter:title" content="Comunidad Ornitológica SOCNAS">
 <meta property="twitter:description" content="Grupos de WhatsApp para cesión y búsqueda de ejemplares ornitológicos por categorías. ¡Únete a la comunidad!">
-<meta property="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUL-cVw6lwkwNXWe6gWNYaxe2xbIiLaf-614HQHsHT4oHYFvBdAlY6ML0MgZv3LGpNSq5IMbpwE9eCz-4OZhO8UvxfRCRj6XFSJCABDJO6ujrwOIE5Z0x1I841TYqSXx9ZSddI2vShBD_UXqKcbB_GrQfw7jO23gLYNlrXE9A3auyXPREzzeiIgnPR5yE/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2811%29.png">
+<meta property="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitOiwQN8JAHzh0f3xytNz6qDGz-9Kn9It68vdWWiagaagRyx2T90g00oGhMrE-LyBMKpcZYWPKknh7ydlVLKIyBMBYZhcxX8VmnMRJVl8ZrPQLQ0j2zTVWG7wV_zOV8AjTZPnSfO0W8Kzog4TaqCJcKI_M1KWgriUoW36X-vRjZpTqC2mrujhSBJWsik8/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2812%29.png">
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#075e54">
@@ -44,6 +44,34 @@ body{
   padding:20px 16px 40px;
 }
 
+/* BOTÓN DE INSTALACIÓN */
+#installButton{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: none;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+#installButton:hover{
+  background: #1ebc5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+#installButton:active{
+  transform: translateY(0);
+}
+
 /* HEADER */
 .header{text-align:center;margin-bottom:28px}
 .logo{
@@ -51,7 +79,8 @@ body{
   height:auto;
   max-width:100%;
   margin-bottom:20px;
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 .header h1{font-size:24px;font-weight:700;margin-bottom:10px;color:#ffffff}
 .header p{
@@ -101,6 +130,7 @@ body{
   font-size:15px;
   transition:.2s;
   border:1px solid transparent;
+  color: white;
 }
 .card a:hover{
   opacity:0.9;
@@ -109,8 +139,8 @@ body{
 
 /* 🟢 FEDÉRATE ONLINE */
 .federate{
-  background:#e0f0e3;
-  border:1px solid #c2e0c6;
+  background:#e8f5e9;
+  border:1px solid #c8e6c9;
 }
 .federate a{
   background:#25d366;
@@ -130,17 +160,37 @@ body{
 }
 
 /* OTRAS SALAS */
-.psitacidas a{background:#128c7e;color:#ffffff}
-.silvestres a{background:#075e54;color:#ffffff}
-.canarios a{background:#25d366;color:#ffffff}
-.avicolombia a{background:#128c7e;color:#ffffff}
+.psitacidas{
+  background:#fff3e0;
+  border:1px solid #ffccbc;
+}
+.psitacidas a{background:#ff9800;color:#ffffff}
+
+.silvestres{
+  background:#e8f5e1;
+  border:1px solid #c8e6c9;
+}
+.silvestres a{background:#4caf50;color:#ffffff}
+
+.canarios{
+  background:#fffde7;
+  border:1px solid #fff9c4;
+}
+.canarios a{background:#ffc107;color:#000000}
+
+.avicolombia{
+  background:#e3f2fd;
+  border:1px solid #bbdefb;
+}
+.avicolombia a{background:#2196f3;color:#ffffff}
 
 /* ⚪ CONTACTO */
 .contacto{
-  background:#f0f2f5;
+  background:#f5f5f5;
+  border:1px solid #e0e0e0;
 }
 .contacto a{
-  background:#075e54;
+  background:#9c27b0;
   color:#ffffff;
 }
 
@@ -159,18 +209,24 @@ body{
   .card{padding:20px 16px 18px}
   .logo{width:200px; margin-bottom:16px;}
   .header h1{font-size:22px;}
+  #installButton{
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<button id="installButton" style="display: none;">📲 Instalar App</button>
+<button id="installButton">📲 Instalar App</button>
 
 <main class="container">
 
 <header class="header">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUL-cVw6lwkwNXWe6gWNYaxe2xbIiLaf-614HQHsHT4oHYFvBdAlY6ML0MgZv3LGpNSq5IMbpwE9eCz-4OZhO8UvxfRCRj6XFSJCABDJO6ujrwOIE5Z0x1I841TYqSXx9ZSddI2vShBD_UXqKcbB_GrQfw7jO23gLYNlrXE9A3auyXPREzzeiIgnPR5yE/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2811%29.png" class="logo" alt="SOCNAS Logo">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitOiwQN8JAHzh0f3xytNz6qDGz-9Kn9It68vdWWiagaagRyx2T90g00oGhMrE-LyBMKpcZYWPKknh7ydlVLKIyBMBYZhcxX8VmnMRJVl8ZrPQLQ0j2zTVWG7wV_zOV8AjTZPnSfO0W8Kzog4TaqCJcKI_M1KWgriUoW36X-vRjZpTqC2mrujhSBJWsik8/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2812%29.png" class="logo" alt="SOCNAS Logo">
   <h1>Comunidad Ornitológica SOCNAS</h1>
   <p>Grupo solo para buscar o ceder ejemplares y accesorios.<br>
 Mensajes claros: qué se busca/ofrece y zona.<br>
