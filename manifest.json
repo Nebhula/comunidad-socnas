@@ -4,8 +4,8 @@
   "start_url": "/comunidad-socnas/index.html",
   "scope": "/comunidad-socnas/",
   "display": "standalone",
-  "background_color": "#000",
-  "theme_color": "#000",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "description": "Comunidad ornitológica de SOCNAS para la cesión y busquedas de aves y pájaros.",
   "icons": [
     {
