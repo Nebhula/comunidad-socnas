@@ -23,384 +23,335 @@
 <meta name="twitter:description" content="Grupos de WhatsApp para cesión y búsqueda de ejemplares ornitológicos por categorías. ¡Únete a la comunidad!">
 <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXgPXAeqmzpbzDBqxAE1ZjhoZPSKofHMmE_r9gioqgj_S2gRGNxHWr4XMEgdwo5GwP5jus3WMWVCcCBjGX3-ZyxEA0yscr0w5hW_MveJOUj9ZgEuUVhG0N1U-EZQdKAypHWfidaKyESKzQG8eSg3cq8V8QHx_FV2AIrLQWJkygEo9XyPB0HXX4A2OPuvU/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2814%29.png">
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#075e54">
+
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+  background:#0a0a0a; /* Fondo negro mate suave */
+  color:#e0e0e0;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0a0a0a;
-  color: #e0e0e0;
-  line-height: 1.6;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  position: relative;
+.container{
+  max-width:460px;
+  margin:0 auto;
+  padding:20px 16px 40px;
 }
 
-.container {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* HEADER */
-.header {
-  text-align: center;
-  margin-bottom: 32px;
-  padding: 0 16px;
-}
-.logo {
-  width: 240px;
-  height: auto;
-  margin: 0 auto 20px;
-  display: block;
-  opacity: 0.9;
-}
-.header h1 {
-  font-size: 28px;
+/* BOTÓN DE INSTALACIÓN */
+#installButton{
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: #2d3748; /* Azul grisáceo suave */
+  color: #63b3ed;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 16px;
-  color: #f0f0f0;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-}
-.header p {
-  font-size: 16px;
-  color: #b0b0b0;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-/* CARD STYLES */
-.card {
-  background: #1a1a1a;
-  border-radius: 14px;
-  padding: 26px;
-  margin-bottom: 24px;
-  text-align: center;
-  position: relative;
+  cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  border: 1px solid #2a2a2a;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: none;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
-.card:hover {
+#installButton:hover{
+  background: #323f52;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
-.card h2 {
-  font-size: 22px;
-  margin-bottom: 16px;
-  color: #f5f5f5;
-  font-weight: 600;
-}
-.card p {
-  font-size: 16px;
-  color: #c0c0c0;
-  margin-bottom: 24px;
-  line-height: 1.6;
-}
-.card .icon {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 20px;
-  border: 2px solid #333;
-  background: #252525;
-}
-.card .icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.85;
-}
-.card a {
-  display: inline-block;
-  padding: 13px 30px;
-  background: #2d3748;
-  color: #48bb78;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 8px;
-  font-size: 17px;
-  transition: all 0.25s ease;
-  border: 1px solid #3a4558;
-}
-.card a:hover {
-  background: #323f52;
-  color: #68d391;
-  transform: translateY(-1px);
-  border-color: #4a5a6f;
-}
-
-/* SPECIFIC CARD SUBTLE VARIATIONS */
-.psitacidas { background: #1c1c1c; }
-.silvestres { background: #1b1d1c; }
-.canarios { background: #1d1c1b; }
-.avicolombia { background: #1b1c1d; }
-.federate { 
-  background: #191e19; 
-  position: relative;
-}
-.badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #2d3748;
-  color: #63b3ed;
-  font-weight: 700;
-  padding: 6px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  border: 1px solid #3a4558;
-  z-index: 10;
-}
-.contacto { 
-  background: #1d1b1e; 
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid #2a2a2a;
-  color: #888;
-  font-size: 14px;
-}
-
-/* FLOATING BUTTONS */
-#installButton,
-#shareButton {
-  position: fixed;
-  right: 20px;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: all 0.25s ease;
-  font-family: inherit;
-}
-#installButton {
-  bottom: 80px;
-  background: #2d3748;
-  color: #63b3ed;
-  display: none;
-}
-#shareButton {
-  bottom: 20px;
-  background: #2d3748;
-  color: #48bb78;
-}
-#installButton:hover,
-#shareButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
-#installButton:active,
-#shareButton:active {
+#installButton:active{
   transform: translateY(0);
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 12px;
-  }
-  .header h1 {
-    font-size: 24px;
-  }
-  .header p {
-    font-size: 14px;
-  }
-  .card {
-    padding: 22px 18px;
-  }
-  .card h2 {
-    font-size: 20px;
-  }
-  .card p {
-    font-size: 14px;
-  }
-  .card a {
-    font-size: 16px;
-    padding: 12px 24px;
-  }
-  .logo {
-    width: 200px;
-  }
-  #installButton,
-  #shareButton {
-    right: 16px;
-    bottom: 16px;
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  #installButton {
-    bottom: 70px;
-  }
+/* BOTÓN DE COMPARTIR */
+#shareButton{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2d3748; /* Mismo tono suave */
+  color: #48bb78; /* Verde menta suave */
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+#shareButton:hover{
+  background: #323f52;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+#shareButton:active{
+  transform: translateY(0);
 }
 
-@media (max-width: 480px) {
-  body {
-    padding: 15px;
-  }
-  .header {
-    margin-bottom: 24px;
-  }
-  .card {
-    padding: 18px 14px;
-    margin-bottom: 20px;
-  }
-  .card .icon {
-    width: 75px;
-    height: 75px;
-  }
-  .card a {
-    font-size: 15px;
+/* HEADER */
+.header{text-align:center;margin-bottom:28px}
+.logo{
+  width:240px;
+  height:auto;
+  max-width:100%;
+  margin-bottom:20px;
+}
+.header h1{font-size:24px;font-weight:700;margin-bottom:10px;color:#ffffff}
+.header p{
+  font-size:14px;
+  color:#b0b0b0;
+  line-height:1.5;
+}
+
+/* CARD BASE */
+.card{
+  background:#1a1a1a;
+  border-radius:12px;
+  padding:24px 20px 22px;
+  margin-bottom:16px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.12);
+  text-align:center;
+  position:relative;
+  border:1px solid #2a2a2a;
+}
+
+/* ICON */
+.icon{
+  width:80px;height:80px;border-radius:50%;
+  overflow:hidden;margin:0 auto 14px;
+  border:2px solid #333;
+}
+.icon img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.icon svg{
+  width: 48px;
+  height: 48px;
+  color: #48bb78;
+}
+
+/* TEXT */
+.card h2{font-size:18px;margin-bottom:8px;font-weight:600;color:#ffffff}
+.card p{
+  font-size:14px;
+  color:#c0c0c0;
+  margin-bottom:16px;
+  line-height:1.4
+}
+
+/* BUTTON */
+.card a{
+  display:block;width:100%;
+  padding:14px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  font-size:15px;
+  transition:.2s;
+  border:1px solid transparent;
+  color: white;
+  background: #2d3748;
+}
+.card a:hover{
+  background: #323f52;
+  opacity:1;
+}
+
+/* ESPECÍFICOS - colores muy suaves */
+.psitacidas{background:#1c1a18;}
+.silvestres{background:#1a1c1a;}
+.canarios{background:#1c1b19;}
+.avicolombia{background:#191b1c;}
+.federate{background:#191c19;border:1px solid #2a3a2a;}
+.federate a{background:#2d3748;color:#63b3ed;}
+
+.badge{
+  position:absolute;top:-10px;left:50%;
+  transform:translateX(-50%);
+  background:#2d3748;
+  color:#63b3ed;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:999px;
+  font-weight:700;
+  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+  box-shadow:0 2px 4px rgba(0,0,0,0.25);
+}
+
+.contacto{background:#1b191c;}
+.contacto a{background:#2d3748;color:#48bb78;}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  margin-top:28px;
+  font-size:12px;
+  color:#888888;
+  padding-top:16px;
+  border-top:1px solid #2a2a2a;
+}
+
+@media(max-width:480px){
+  .container{padding:16px 12px 32px}
+  .card{padding:20px 16px 18px}
+  .logo{width:200px; margin-bottom:16px;}
+  .header h1{font-size:22px;}
+  #installButton, #shareButton{
+    bottom: 15px;
+    right: 15px;
     padding: 10px 20px;
-    width: 100%;
-    max-width: 300px;
+    font-size: 13px;
   }
-  .badge {
-    padding: 5px 14px;
-    font-size: 12px;
-    top: -10px;
+  #installButton{
+    bottom: 60px;
   }
 }
 </style>
 </head>
 
 <body>
-  <button id="installButton">📲 Instalar App</button>
-  <button id="shareButton">📤 Compartir</button>
 
-  <main class="container">
-    <header class="header">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitOiwQN8JAHzh0f3xytNz6qDGz-9Kn9It68vdWWiagaagRyx2T90g00oGhMrE-LyBMKpcZYWPKknh7ydlVLKIyBMBYZhcxX8VmnMRJVl8ZrPQLQ0j2zTVWG7wV_zOV8AjTZPnSfO0W8Kzog4TaqCJcKI_M1KWgriUoW36X-vRjZpTqC2mrujhSBJWsik8/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2812%29.png" class="logo" alt="SOCNAS Logo">
-      <h1>Comunidad Ornitológica SOCNAS</h1>
-      <p>Grupo solo para buscar o ceder ejemplares y accesorios.<br>
-      Mensajes claros: qué se busca/ofrece y zona.<br>
-      ❌ Nada de charlas, debates, spam ni publicidad.<br>
-      Solo pájaros y aves legales y en buen estado.<br>
-      Respeto obligatorio; problemas por privado.</p>
-    </header>
+<button id="installButton">📲 Instalar App</button>
+<button id="shareButton">📤 Compartir</button>
 
-    <section class="card psitacidas">
-      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhy9PL-kH8TcRPRzzRhR8guOURomyZOuoNligqu6dXcHbADLcF67jyvHLXWLXbhRKQ8UWyyW3rV10u9lav89HEMSgTUrYY1hXz6GNUM58fLhV1ztlJ2DRJ36r93ZcyB9NYulkYmJdV5LVCoWy0cmZYHLxiBojlRY-xWrjFeO8uPkSkmauFfWSvMk4jTAyM/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%281%29.png"></div>
-      <h2>PSITÁCIDAS</h2>
-      <p>Solo para Cesiones y búsquedas de Loros, periquitos, agapornis, Ninfas etc... y accesorios o complementos.</p>
-      <a href="https://chat.whatsapp.com/DE42pHakzn11HCAGtJWAJE">Unirme a esta sala</a>
-    </section>
+<main class="container">
 
-    <section class="card silvestres">
-      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga2Wb7f4W3i_VMuGzxYyUT5GQoSMA-I_VCl-I5GAaNHWKyZg9LXJozwZB6D-UKMTjKWtfx9yhiZDPgPYoI84ccEghpfWf0BN9_-wkb_rcy6XbOFiohrgxRW0rebRR8GnuYO6bdCQfyRKPGxvW9mSYYNU3_gDdzHd5xWTvTdJlWgdKtEGEqNLTUjxB75Hw/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%282%29.png"></div>
-      <h2>SILVESTRES Y EXÓTICOS</h2>
-      <p>Solo para Cesiones y búsquedas de SILVESTRES: Jilgueros, Pardillos, Vederones etc.. y aves EXÓTICAS: Diamantes Gould etc...</p>
-      <a href="https://chat.whatsapp.com/Hp5vJqbrIzh7BHkYmCSIFe">Unirme a esta sala</a>
-    </section>
+<header class="header">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitOiwQN8JAHzh0f3xytNz6qDGz-9Kn9It68vdWWiagaagRyx2T90g00oGhMrE-LyBMKpcZYWPKknh7ydlVLKIyBMBYZhcxX8VmnMRJVl8ZrPQLQ0j2zTVWG7wV_zOV8AjTZPnSfO0W8Kzog4TaqCJcKI_M1KWgriUoW36X-vRjZpTqC2mrujhSBJWsik8/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%2812%29.png" class="logo" alt="SOCNAS Logo">
+  <h1>Comunidad Ornitológica SOCNAS</h1>
+  <p>Grupo solo para buscar o ceder ejemplares y accesorios.<br>
+Mensajes claros: qué se busca/ofrece y zona.<br>
+❌ Nada de charlas, debates, spam ni publicidad.<br>
+Solo pájaros y aves legales y en buen estado.<br>
+Respeto obligatorio; problemas por privado.</p>
+</header>
 
-    <section class="card canarios">
-      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYFxotCSSvp4oIQLdVqvbAuIv-D_pu-ghACYJ_24NTRWonslr-wUOI83MOYNSQ21X6cAqmjWUIfl06KdV_nuwTVxaeJvEsoT9bVu1g1WnYRn3Y7UfC-BGQNklJ_RorPU9RQzLJ4u5WPo47KgHqyhGE-XULAl679WrWd7sU-KI8QbzFA9rX1KAki9lnt2M/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%283%29.png"></div>
-      <h2>CANARICULTURA</h2>
-      <p>Solo para Cesiones y búsquedas de ejemplares de CANARIOS: canto, color, postura, sus accesorios y complementos...</p>
-      <a href="https://chat.whatsapp.com/L7O4Gas9NG3AEfQDkqDQuQ">Unirme a esta sala</a>
-    </section>
+<section class="card psitacidas">
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhy9PL-kH8TcRPRzzRhR8guOURomyZOuoNligqu6dXcHbADLcF67jyvHLXWLXbhRKQ8UWyyW3rV10u9lav89HEMSgTUrYY1hXz6GNUM58fLhV1ztlJ2DRJ36r93ZcyB9NYulkYmJdV5LVCoWy0cmZYHLxiBojlRY-xWrjFeO8uPkSkmauFfWSvMk4jTAyM/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%281%29.png"></div>
+  <h2>PSITÁCIDAS</h2>
+  <p>Solo para Cesiones y búsquedas de Loros, periquitos, agapornis, Ninfas etc... y accesorios o complementos.</p>
+  <a href="https://chat.whatsapp.com/DE42pHakzn11HCAGtJWAJE">Unirme a esta sala</a>
+</section>
 
-    <section class="card avicolombia">
-      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXdmtUvGIbJb0OD4f-X7CSEH0ycgoym8MQfIgAx6qsLItI1Z1X1cy8k5Ya0Q3qs6rgtQfw_l9xp35ufbm1FCp8a3xF4QBVcRHe0EtYoJ3nDgrgCFr-Nj6h2PAcyhDmTY4nb-42MFkkaG5nHsL2uXADYe5qfuR5R7q2pgvJO0k4UHDVbZwmvxgSGmRbBbI/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%284%29.png"></div>
-      <h2>AVICULTURA Y COLOMBICULTURA</h2>
-      <p>Solo para Cesiones y búsquedas de ejemplares de aves Gallinaceas, Patos, Faisanes, Codornicez, Perdices, TODO AVE DE CORRAL y palomas - palomos de raza...</p>
-      <a href="https://chat.whatsapp.com/GVN0hf6CtlH02kQoXfwl4X">Unirme a esta sala</a>
-    </section>
+<section class="card silvestres">
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga2Wb7f4W3i_VMuGzxYyUT5GQoSMA-I_VCl-I5GAaNHWKyZg9LXJozwZB6D-UKMTjKWtfx9yhiZDPgPYoI84ccEghpfWf0BN9_-wkb_rcy6XbOFiohrgxRW0rebRR8GnuYO6bdCQfyRKPGxvW9mSYYNU3_gDdzHd5xWTvTdJlWgdKtEGEqNLTUjxB75Hw/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%282%29.png"></div>
+  <h2>SILVESTRES Y EXÓTICOS</h2>
+  <p>Solo para Cesiones y búsquedas de SILVESTRES: Jilgueros, Pardillos, Vederones etc.. y aves EXÓTICAS: Diamantes Gould etc...</p>
+  <a href="https://chat.whatsapp.com/Hp5vJqbrIzh7BHkYmCSIFe">Unirme a esta sala</a>
+</section>
 
-    <section class="card federate">
-      <span class="badge">PRIORITARIO</span>
-      <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwoudJJadPxFpzgT1YAknOjOvNAJnxd2YQrhmNJPr2q4ovRWTxYxSS5ShVLS4JIuaAaI_lpMD9DfEp4wiLQTviVN43qCKRLjLTJi2404Jq2ML8vqbKIAgcJvF8uxndMAsrJ7dTlOVbBEJzAkuws9C2H5rnkPdYVwqULFtSV37kjkz25FUrT2MnQ-D7XGQ/s1600/nebhula%20%2875%29.png"></div>
-      <h2>¡FEDÉRATE ONLINE!</h2>
-      <p>Federate Online con SOCNAS y forma parte de un gran número de criadores nacionales federados, anillas federativas y carnet para todo tipo de géneros de ejemplares Ornitología, Avicultura y Colombicultura. A nivel nacional España - Baleares - Ceuta - Melilla y Portugal..</p>
-      <a href="https://www.socnas.org/">Ir a web oficial SOCNAS</a>
-    </section>
+<section class="card canarios">
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYFxotCSSvp4oIQLdVqvbAuIv-D_pu-ghACYJ_24NTRWonslr-wUOI83MOYNSQ21X6cAqmjWUIfl06KdV_nuwTVxaeJvEsoT9bVu1g1WnYRn3Y7UfC-BGQNklJ_RorPU9RQzLJ4u5WPo47KgHqyhGE-XULAl679WrWd7sU-KI8QbzFA9rX1KAki9lnt2M/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%283%29.png"></div>
+  <h2>CANARICULTURA</h2>
+  <p>Solo para Cesiones y búsquedas de ejemplares de CANARIOS: canto, color, postura, sus accesorios y complementos...</p>
+  <a href="https://chat.whatsapp.com/L7O4Gas9NG3AEfQDkqDQuQ">Unirme a esta sala</a>
+</section>
 
-    <section class="card contacto">
-      <div class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:50px;height:50px;color:#48bb78;">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
-      </div>
-      <h2>CONTACTO</h2>
-      <p>¿Dudas, sugerencias o colaboración? Escríbenos directamente.</p>
-      <a href="https://wa.me/34677163664">Contactar por WhatsApp</a>
-    </section>
+<section class="card avicolombia">
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXdmtUvGIbJb0OD4f-X7CSEH0ycgoym8MQfIgAx6qsLItI1Z1X1cy8k5Ya0Q3qs6rgtQfw_l9xp35ufbm1FCp8a3xF4QBVcRHe0EtYoJ3nDgrgCFr-Nj6h2PAcyhDmTY4nb-42MFkkaG5nHsL2uXADYe5qfuR5R7q2pgvJO0k4UHDVbZwmvxgSGmRbBbI/s1600/Yellow%20and%20Black%20Illustrated%20Dog%20Warning%20Logo%20%284%29.png"></div>
+  <h2>AVICULTURA Y COLOMBICULTURA</h2>
+  <p>Solo para Cesiones y búsquedas de ejemplares de aves Gallinaceas, Patos, Faisanes, Codornicez, Perdices, TODO AVE DE CORRAL y palomas - palomos de raza...</p>
+  <a href="https://chat.whatsapp.com/GVN0hf6CtlH02kQoXfwl4X">Unirme a esta sala</a>
+</section>
 
-    <footer class="footer">
-      Comunidad Ornitológica · WhatsApp
-    </footer>
-  </main>
+<section class="card federate">
+  <span class="badge">PRIORITARIO</span>
+  <div class="icon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwoudJJadPxFpzgT1YAknOjOvNAJnxd2YQrhmNJPr2q4ovRWTxYxSS5ShVLS4JIuaAaI_lpMD9DfEp4wiLQTviVN43qCKRLjLTJi2404Jq2ML8vqbKIAgcJvF8uxndMAsrJ7dTlOVbBEJzAkuws9C2H5rnkPdYVwqULFtSV37kjkz25FUrT2MnQ-D7XGQ/s1600/nebhula%20%2875%29.png"></div>
+  <h2>¡FEDÉRATE ONLINE!</h2>
+  <p>Federate Online con SOCNAS y forma parte de un gran número de criadores nacionales federados, anillas federativas y carnet para todo tipo de géneros de ejemplares Ornitología, Avicultura y Colombicultura. A nivel nacional España - Baleares - Ceuta - Melilla y Portugal..</p>
+  <a href="https://www.socnas.org/">Ir a web oficial SOCNAS</a>
+</section>
 
-  <script>
-    let deferredPrompt;
-    const installButton = document.getElementById('installButton');
-    const shareButton = document.getElementById('shareButton');
+<section class="card contacto">
+  <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </div>
+  <h2>CONTACTO</h2>
+  <p>¿Dudas, sugerencias o colaboración? Escríbenos directamente.</p>
+  <a href="https://wa.me/34677163664">Contactar por WhatsApp</a>
+</section>
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installButton.style.display = 'block';
-    });
+<footer class="footer">
+  Comunidad Ornitológica · WhatsApp
+</footer>
 
-    installButton.addEventListener('click', async () => {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') {
-        installButton.style.display = 'none';
-      }
-      deferredPrompt = null;
-    });
+</main>
 
-    window.addEventListener('appinstalled', () => {
-      installButton.style.display = 'none';
-    });
+<script>
+let deferredPrompt;
+const installButton = document.getElementById('installButton');
+const shareButton = document.getElementById('shareButton');
 
-    shareButton.addEventListener('click', async () => {
-      const shareData = {
-        title: 'Comunidad Ornitológica SOCNAS',
-        text: 'Grupos de WhatsApp para cesión y búsqueda de ejemplares ornitológicos por categorías. ¡Únete a la comunidad!',
-        url: window.location.href
-      };
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installButton.style.display = 'block';
+});
 
-      try {
-        if (navigator.share) {
-          await navigator.share(shareData);
-        } else {
-          await navigator.clipboard.writeText(shareData.url);
-          alert('¡Enlace copiado! Pégalo donde quieras compartirlo.');
-        }
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          const tempInput = document.createElement('input');
-          tempInput.value = shareData.url;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
-          alert('¡Enlace copiado al portapapeles!');
-        }
-      }
-    });
-  </script>
+installButton.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') {
+    console.log('Usuario instaló la PWA');
+    installButton.style.display = 'none';
+  }
+  deferredPrompt = null;
+});
+
+window.addEventListener('appinstalled', () => {
+  console.log('PWA instalada');
+  installButton.style.display = 'none';
+});
+
+shareButton.addEventListener('click', async () => {
+  const shareData = {
+    title: 'Comunidad Ornitológica SOCNAS',
+    text: 'Grupos de WhatsApp para cesión y búsqueda de ejemplares ornitológicos por categorías. ¡Únete a la comunidad!',
+    url: window.location.href
+  };
+  
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else {
+      await navigator.clipboard.writeText(shareData.url);
+      alert('¡Enlace copiado! Pégalo donde quieras compartirlo.');
+    }
+  } catch (err) {
+    if (err.name !== 'AbortError') {
+      const tempInput = document.createElement('input');
+      tempInput.value = shareData.url;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      alert('¡Enlace copiado al portapapeles!');
+    }
+  }
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/comunidad-socnas/sw.js')
+    .then(() => console.log('Service Worker registrado correctamente'));
+}
+</script>
+
 </body>
 </html>
 
